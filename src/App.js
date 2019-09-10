@@ -8,14 +8,22 @@ import './App.css';
 import { theme } from './styles/materialStyling.js';
 import { initSetDogs } from './actions';
 import { connect } from 'react-redux';
+import { fetchDogs } from './adapters/dogsAdapter.js';
 
 class App extends Component {
+
+  state = {
+    dogs: []
+  }
+
   componentDidMount() {
-    initSetDogs();
-  };
+    fetchDogs()
+    .then(data => {
+      this.setState({ dogs: data })
+    }, console.log(this.state))
+  }
 
   render() {
-    // const parseData = JSON.parse(JSON.stringify(jsonData));
     return (
       <div className="App">
         <MuiThemeProvider theme={theme}>
@@ -28,8 +36,9 @@ class App extends Component {
 };
 
 const mapStateToProps = (state) => {
+  console.log(state)
   return {
-    dogsList: state.dogsState.dogs,
+    dogList: state.dogsState.dogList,
   }
 };
 

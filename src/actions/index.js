@@ -1,21 +1,21 @@
 import { fetchDogs } from '../adapters/dogsAdapter';
 
 export const initSetDogs = () => {
+  console.log(fetchDogs())
   return (dispatch) => {
     return fetchDogs()
-      .then(dogs => {
-        console.log(dogs)
-        return dispatch(SET_DOGS(dogs));
+      .then(dogList => {
+        return dispatch(setDogs(dogList));
       });
   };
 };
 
 
-export const SET_DOGS = (dogs) => {
+export const setDogs = (dogList) => {
   return {
     type: 'SET_DOGS',
     payload: {
-      dogs
+      dogList
     }
   }
 };
