@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
-import dogReducer from './exampleReducer';
+import dogReducer from './dogReducer';
 
 const rootReducer = combineReducers({
-  dogState: dogReducer
+  dogsState: dogReducer
 });
 
 export default rootReducer;

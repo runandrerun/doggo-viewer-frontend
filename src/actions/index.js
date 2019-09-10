@@ -5,13 +5,13 @@ export const initSetDogs = () => {
     return fetchDogs()
       .then(dogs => {
         console.log(dogs)
-        return dispatch(setDogs(dogs));
+        return dispatch(SET_DOGS(dogs));
       });
   };
 };
 
 
-export const setDogs = (dogs) => {
+export const SET_DOGS = (dogs) => {
   return {
     type: 'SET_DOGS',
     payload: {

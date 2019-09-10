@@ -1,4 +1,4 @@
-import { DOG_LIST } from '../actions/types';
+import { SET_DOGS } from '../actions';
 
 const initialState = {
   dogList: [],
@@ -7,8 +7,8 @@ const initialState = {
 
 const dogReducer = (state = initialState, action) => {
   switch (action.type) {
-    case DOG_LIST
-    return {dogList: [...dogList, dogList]}
+    case SET_DOGS:
+    return { dogList: action.type.payload }
 
     default:
     return state;

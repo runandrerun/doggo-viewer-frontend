@@ -5,13 +5,13 @@ import MuiThemeProvider from '@material-ui/core/styles/MuiThemeProvider';
 import Filter from './components/Filter.js';
 import DogsVirtualizedContainer from './containers/DogsVirtualizedContainer';
 import './App.css';
-import { theme } from './themes/materialStyling.js';
+import { theme } from './styles/materialStyling.js';
 import { initSetDogs } from './actions';
 import { connect } from 'react-redux';
 
 class App extends Component {
   componentDidMount() {
-    // initSetDogs();
+    initSetDogs();
   };
 
   render() {
@@ -29,7 +29,7 @@ class App extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    dogs: state.dogsState.dogs,
+    dogsList: state.dogsState.dogs,
   }
 };
 
