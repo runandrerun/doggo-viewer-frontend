@@ -5,7 +5,7 @@ export const initSetDogs = () => {
     return fetchDogs()
       .then(dogs => {
         console.log(dogs)
-        return dispatch(setDogs(dog));
+        return dispatch(setDogs(dogs));
       });
   };
 };
